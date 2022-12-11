@@ -1,0 +1,2612 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "backend-examen2",
+    "version": "0.0.1",
+    "description": "backend-examen2",
+    "contact": {}
+  },
+  "paths": {
+    "/detalle-facturas/count": {
+      "get": {
+        "x-controller-name": "DetalleFacturaController",
+        "x-operation-name": "count",
+        "tags": [
+          "DetalleFacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "DetalleFactura model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "DetalleFactura.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<DetalleFactura>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "DetalleFacturaController.count"
+      }
+    },
+    "/detalle-facturas/{id}/facturas": {
+      "post": {
+        "x-controller-name": "DetalleFacturaFacturaController",
+        "x-operation-name": "create",
+        "tags": [
+          "DetalleFacturaFacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "DetalleFactura model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Factura"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewFacturaInDetalleFactura"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "DetalleFacturaFacturaController.create"
+      },
+      "patch": {
+        "x-controller-name": "DetalleFacturaFacturaController",
+        "x-operation-name": "patch",
+        "tags": [
+          "DetalleFacturaFacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "DetalleFactura.Factura PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Factura.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Factura>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FacturaPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "DetalleFacturaFacturaController.patch"
+      },
+      "get": {
+        "x-controller-name": "DetalleFacturaFacturaController",
+        "x-operation-name": "find",
+        "tags": [
+          "DetalleFacturaFacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of DetalleFactura has many Factura",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Factura"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "DetalleFacturaFacturaController.find"
+      },
+      "delete": {
+        "x-controller-name": "DetalleFacturaFacturaController",
+        "x-operation-name": "delete",
+        "tags": [
+          "DetalleFacturaFacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "DetalleFactura.Factura DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Factura.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Factura>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "DetalleFacturaFacturaController.delete"
+      }
+    },
+    "/detalle-facturas/{id}/productos": {
+      "get": {
+        "x-controller-name": "DetalleFacturaProductosController",
+        "x-operation-name": "getProductos",
+        "tags": [
+          "DetalleFacturaProductosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Productos belonging to DetalleFactura",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Productos"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "DetalleFacturaProductosController.getProductos"
+      }
+    },
+    "/detalle-facturas/{id}": {
+      "put": {
+        "x-controller-name": "DetalleFacturaController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "DetalleFacturaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "DetalleFactura PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetalleFactura"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "DetalleFacturaController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "DetalleFacturaController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "DetalleFacturaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "DetalleFactura PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetalleFacturaPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "DetalleFacturaController.updateById"
+      },
+      "get": {
+        "x-controller-name": "DetalleFacturaController",
+        "x-operation-name": "findById",
+        "tags": [
+          "DetalleFacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "DetalleFactura model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetalleFacturaWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetalleFactura.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "DetalleFacturaController.findById"
+      },
+      "delete": {
+        "x-controller-name": "DetalleFacturaController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "DetalleFacturaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "DetalleFactura DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "DetalleFacturaController.deleteById"
+      }
+    },
+    "/detalle-facturas": {
+      "post": {
+        "x-controller-name": "DetalleFacturaController",
+        "x-operation-name": "create",
+        "tags": [
+          "DetalleFacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "DetalleFactura model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetalleFactura"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewDetalleFactura"
+              }
+            }
+          }
+        },
+        "operationId": "DetalleFacturaController.create"
+      },
+      "patch": {
+        "x-controller-name": "DetalleFacturaController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "DetalleFacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "DetalleFactura PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "DetalleFactura.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<DetalleFactura>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetalleFacturaPartial"
+              }
+            }
+          }
+        },
+        "operationId": "DetalleFacturaController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "DetalleFacturaController",
+        "x-operation-name": "find",
+        "tags": [
+          "DetalleFacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of DetalleFactura model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DetalleFacturaWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetalleFactura.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "DetalleFacturaController.find"
+      }
+    },
+    "/facturas/count": {
+      "get": {
+        "x-controller-name": "FacturaController",
+        "x-operation-name": "count",
+        "tags": [
+          "FacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Factura model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Factura.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Factura>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "FacturaController.count"
+      }
+    },
+    "/facturas/{id}/detalle-factura": {
+      "get": {
+        "x-controller-name": "FacturaDetalleFacturaController",
+        "x-operation-name": "getDetalleFactura",
+        "tags": [
+          "FacturaDetalleFacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "DetalleFactura belonging to Factura",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DetalleFactura"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "FacturaDetalleFacturaController.getDetalleFactura"
+      }
+    },
+    "/facturas/{id}": {
+      "put": {
+        "x-controller-name": "FacturaController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "FacturaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Factura PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Factura"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "FacturaController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "FacturaController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "FacturaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Factura PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FacturaPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "FacturaController.updateById"
+      },
+      "get": {
+        "x-controller-name": "FacturaController",
+        "x-operation-name": "findById",
+        "tags": [
+          "FacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Factura model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FacturaWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Factura.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "FacturaController.findById"
+      },
+      "delete": {
+        "x-controller-name": "FacturaController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "FacturaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Factura DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "FacturaController.deleteById"
+      }
+    },
+    "/facturas": {
+      "post": {
+        "x-controller-name": "FacturaController",
+        "x-operation-name": "create",
+        "tags": [
+          "FacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Factura model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Factura"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewFactura"
+              }
+            }
+          }
+        },
+        "operationId": "FacturaController.create"
+      },
+      "patch": {
+        "x-controller-name": "FacturaController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "FacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Factura PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Factura.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Factura>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FacturaPartial"
+              }
+            }
+          }
+        },
+        "operationId": "FacturaController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "FacturaController",
+        "x-operation-name": "find",
+        "tags": [
+          "FacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Factura model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FacturaWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Factura.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "FacturaController.find"
+      }
+    },
+    "/ping": {
+      "get": {
+        "x-controller-name": "PingController",
+        "x-operation-name": "ping",
+        "tags": [
+          "PingController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ping Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PingResponse"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "PingController.ping"
+      }
+    },
+    "/productos/count": {
+      "get": {
+        "x-controller-name": "ProductosController",
+        "x-operation-name": "count",
+        "tags": [
+          "ProductosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Productos model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Productos.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Productos>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ProductosController.count"
+      }
+    },
+    "/productos/{id}/detalle-facturas": {
+      "post": {
+        "x-controller-name": "ProductosDetalleFacturaController",
+        "x-operation-name": "create",
+        "tags": [
+          "ProductosDetalleFacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Productos model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetalleFactura"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewDetalleFacturaInProductos"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ProductosDetalleFacturaController.create"
+      },
+      "patch": {
+        "x-controller-name": "ProductosDetalleFacturaController",
+        "x-operation-name": "patch",
+        "tags": [
+          "ProductosDetalleFacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Productos.DetalleFactura PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "DetalleFactura.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<DetalleFactura>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetalleFacturaPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ProductosDetalleFacturaController.patch"
+      },
+      "get": {
+        "x-controller-name": "ProductosDetalleFacturaController",
+        "x-operation-name": "find",
+        "tags": [
+          "ProductosDetalleFacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Productos has many DetalleFactura",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DetalleFactura"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ProductosDetalleFacturaController.find"
+      },
+      "delete": {
+        "x-controller-name": "ProductosDetalleFacturaController",
+        "x-operation-name": "delete",
+        "tags": [
+          "ProductosDetalleFacturaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Productos.DetalleFactura DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "DetalleFactura.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<DetalleFactura>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ProductosDetalleFacturaController.delete"
+      }
+    },
+    "/productos/{id}": {
+      "put": {
+        "x-controller-name": "ProductosController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "ProductosController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Productos PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Productos"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ProductosController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "ProductosController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "ProductosController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Productos PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductosPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ProductosController.updateById"
+      },
+      "get": {
+        "x-controller-name": "ProductosController",
+        "x-operation-name": "findById",
+        "tags": [
+          "ProductosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Productos model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductosWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Productos.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ProductosController.findById"
+      },
+      "delete": {
+        "x-controller-name": "ProductosController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "ProductosController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Productos DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "ProductosController.deleteById"
+      }
+    },
+    "/productos": {
+      "post": {
+        "x-controller-name": "ProductosController",
+        "x-operation-name": "create",
+        "tags": [
+          "ProductosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Productos model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Productos"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewProductos"
+              }
+            }
+          }
+        },
+        "operationId": "ProductosController.create"
+      },
+      "patch": {
+        "x-controller-name": "ProductosController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "ProductosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Productos PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Productos.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Productos>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductosPartial"
+              }
+            }
+          }
+        },
+        "operationId": "ProductosController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "ProductosController",
+        "x-operation-name": "find",
+        "tags": [
+          "ProductosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Productos model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductosWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Productos.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ProductosController.find"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Factura": {
+        "title": "Factura",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "correlativo": {
+            "type": "number"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "cliente": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "telefono": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "detalleFacturaId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "correlativo",
+          "fecha",
+          "cliente"
+        ],
+        "additionalProperties": false
+      },
+      "NewFacturaInDetalleFactura": {
+        "title": "NewFacturaInDetalleFactura",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Factura, 'id'>, 'detalleFacturaId'>, schemaOptions: { title: 'NewFacturaInDetalleFactura', exclude: [ 'id' ], optional: [ 'detalleFacturaId' ] })",
+        "properties": {
+          "correlativo": {
+            "type": "number"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "cliente": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "telefono": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "detalleFacturaId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "correlativo",
+          "fecha",
+          "cliente"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Factura, 'id'>, 'detalleFacturaId'>"
+      },
+      "FacturaPartial": {
+        "title": "FacturaPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Factura>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "correlativo": {
+            "type": "number"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "cliente": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "telefono": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "detalleFacturaId": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Factura>"
+      },
+      "Productos": {
+        "title": "Productos",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "descripcion": {
+            "type": "string"
+          },
+          "valor": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "descripcion",
+          "valor"
+        ],
+        "additionalProperties": false
+      },
+      "DetalleFactura": {
+        "title": "DetalleFactura",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "facturaId": {
+            "type": "string"
+          },
+          "productoId": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "productosId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "facturaId",
+          "productoId",
+          "cantidad"
+        ],
+        "additionalProperties": false
+      },
+      "NewDetalleFactura": {
+        "title": "NewDetalleFactura",
+        "type": "object",
+        "description": "(tsType: Omit<DetalleFactura, 'id'>, schemaOptions: { title: 'NewDetalleFactura', exclude: [ 'id' ] })",
+        "properties": {
+          "facturaId": {
+            "type": "string"
+          },
+          "productoId": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "productosId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "facturaId",
+          "productoId",
+          "cantidad"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<DetalleFactura, 'id'>"
+      },
+      "ProductosWithRelations": {
+        "title": "ProductosWithRelations",
+        "type": "object",
+        "description": "(tsType: ProductosWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "descripcion": {
+            "type": "string"
+          },
+          "valor": {
+            "type": "number"
+          },
+          "detalleFacturas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DetalleFacturaWithRelations"
+            }
+          }
+        },
+        "required": [
+          "descripcion",
+          "valor"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "ProductosWithRelations"
+      },
+      "FacturaWithRelations": {
+        "title": "FacturaWithRelations",
+        "type": "object",
+        "description": "(tsType: FacturaWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "correlativo": {
+            "type": "number"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "cliente": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "telefono": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "detalleFacturaId": {
+            "type": "string"
+          },
+          "detalleFactura": {
+            "$ref": "#/components/schemas/DetalleFacturaWithRelations"
+          }
+        },
+        "required": [
+          "correlativo",
+          "fecha",
+          "cliente"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "FacturaWithRelations"
+      },
+      "DetalleFacturaWithRelations": {
+        "title": "DetalleFacturaWithRelations",
+        "type": "object",
+        "description": "(tsType: DetalleFacturaWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "facturaId": {
+            "type": "string"
+          },
+          "productoId": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "productosId": {
+            "type": "string"
+          },
+          "productos": {
+            "$ref": "#/components/schemas/ProductosWithRelations"
+          },
+          "facturas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FacturaWithRelations"
+            }
+          }
+        },
+        "required": [
+          "facturaId",
+          "productoId",
+          "cantidad"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "DetalleFacturaWithRelations"
+      },
+      "DetalleFacturaPartial": {
+        "title": "DetalleFacturaPartial",
+        "type": "object",
+        "description": "(tsType: Partial<DetalleFactura>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "facturaId": {
+            "type": "string"
+          },
+          "productoId": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "productosId": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<DetalleFactura>"
+      },
+      "NewFactura": {
+        "title": "NewFactura",
+        "type": "object",
+        "description": "(tsType: Omit<Factura, 'id'>, schemaOptions: { title: 'NewFactura', exclude: [ 'id' ] })",
+        "properties": {
+          "correlativo": {
+            "type": "number"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "cliente": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "telefono": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "detalleFacturaId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "correlativo",
+          "fecha",
+          "cliente"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Factura, 'id'>"
+      },
+      "NewDetalleFacturaInProductos": {
+        "title": "NewDetalleFacturaInProductos",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<DetalleFactura, 'id'>, 'productosId'>, schemaOptions: { title: 'NewDetalleFacturaInProductos', exclude: [ 'id' ], optional: [ 'productosId' ] })",
+        "properties": {
+          "facturaId": {
+            "type": "string"
+          },
+          "productoId": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "productosId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "facturaId",
+          "productoId",
+          "cantidad"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<DetalleFactura, 'id'>, 'productosId'>"
+      },
+      "NewProductos": {
+        "title": "NewProductos",
+        "type": "object",
+        "description": "(tsType: Omit<Productos, 'id'>, schemaOptions: { title: 'NewProductos', exclude: [ 'id' ] })",
+        "properties": {
+          "descripcion": {
+            "type": "string"
+          },
+          "valor": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "descripcion",
+          "valor"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Productos, 'id'>"
+      },
+      "ProductosPartial": {
+        "title": "ProductosPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Productos>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "descripcion": {
+            "type": "string"
+          },
+          "valor": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Productos>"
+      },
+      "loopback.Count": {
+        "type": "object",
+        "title": "loopback.Count",
+        "x-typescript-type": "@loopback/repository#Count",
+        "properties": {
+          "count": {
+            "type": "number"
+          }
+        }
+      },
+      "DetalleFactura.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "DetalleFactura.ScopeFilter"
+      },
+      "DetalleFactura.IncludeFilter.Items": {
+        "title": "DetalleFactura.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/DetalleFactura.ScopeFilter"
+          }
+        }
+      },
+      "DetalleFactura.Filter": {
+        "type": "object",
+        "title": "DetalleFactura.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "facturaId": {
+                    "type": "boolean"
+                  },
+                  "productoId": {
+                    "type": "boolean"
+                  },
+                  "cantidad": {
+                    "type": "boolean"
+                  },
+                  "productosId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "facturaId",
+                    "productoId",
+                    "cantidad",
+                    "productosId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "DetalleFactura.Fields"
+          },
+          "include": {
+            "title": "DetalleFactura.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/DetalleFactura.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<DetalleFactura>"
+      },
+      "DetalleFactura.Filter1": {
+        "type": "object",
+        "title": "DetalleFactura.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "DetalleFactura.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "facturaId": {
+                    "type": "boolean"
+                  },
+                  "productoId": {
+                    "type": "boolean"
+                  },
+                  "cantidad": {
+                    "type": "boolean"
+                  },
+                  "productosId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "facturaId",
+                    "productoId",
+                    "cantidad",
+                    "productosId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "DetalleFactura.Fields"
+          },
+          "include": {
+            "title": "DetalleFactura.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/DetalleFactura.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<DetalleFactura>"
+      },
+      "Factura.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Factura.ScopeFilter"
+      },
+      "Factura.IncludeFilter.Items": {
+        "title": "Factura.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Factura.ScopeFilter"
+          }
+        }
+      },
+      "Factura.Filter": {
+        "type": "object",
+        "title": "Factura.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "correlativo": {
+                    "type": "boolean"
+                  },
+                  "fecha": {
+                    "type": "boolean"
+                  },
+                  "cliente": {
+                    "type": "boolean"
+                  },
+                  "direccion": {
+                    "type": "boolean"
+                  },
+                  "telefono": {
+                    "type": "boolean"
+                  },
+                  "email": {
+                    "type": "boolean"
+                  },
+                  "detalleFacturaId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "correlativo",
+                    "fecha",
+                    "cliente",
+                    "direccion",
+                    "telefono",
+                    "email",
+                    "detalleFacturaId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Factura.Fields"
+          },
+          "include": {
+            "title": "Factura.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Factura.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Factura>"
+      },
+      "Factura.Filter1": {
+        "type": "object",
+        "title": "Factura.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Factura.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "correlativo": {
+                    "type": "boolean"
+                  },
+                  "fecha": {
+                    "type": "boolean"
+                  },
+                  "cliente": {
+                    "type": "boolean"
+                  },
+                  "direccion": {
+                    "type": "boolean"
+                  },
+                  "telefono": {
+                    "type": "boolean"
+                  },
+                  "email": {
+                    "type": "boolean"
+                  },
+                  "detalleFacturaId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "correlativo",
+                    "fecha",
+                    "cliente",
+                    "direccion",
+                    "telefono",
+                    "email",
+                    "detalleFacturaId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Factura.Fields"
+          },
+          "include": {
+            "title": "Factura.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Factura.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Factura>"
+      },
+      "PingResponse": {
+        "type": "object",
+        "title": "PingResponse",
+        "properties": {
+          "greeting": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "object",
+            "properties": {
+              "Content-Type": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "Productos.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Productos.ScopeFilter"
+      },
+      "Productos.IncludeFilter.Items": {
+        "title": "Productos.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Productos.ScopeFilter"
+          }
+        }
+      },
+      "Productos.Filter": {
+        "type": "object",
+        "title": "Productos.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "descripcion": {
+                    "type": "boolean"
+                  },
+                  "valor": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "descripcion",
+                    "valor"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Productos.Fields"
+          },
+          "include": {
+            "title": "Productos.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Productos.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Productos>"
+      },
+      "Productos.Filter1": {
+        "type": "object",
+        "title": "Productos.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Productos.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "descripcion": {
+                    "type": "boolean"
+                  },
+                  "valor": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "descripcion",
+                    "valor"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Productos.Fields"
+          },
+          "include": {
+            "title": "Productos.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Productos.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Productos>"
+      }
+    }
+  }
+}
